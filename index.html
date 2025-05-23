@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>shakor</title>
+  <style>
+    body {
+      font-family: Tahoma, sans-serif;
+      background: #f0f0f0;
+      direction: rtl;
+      padding: 20px;
+    }
+    #loginDiv, #contentDiv {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #aaa;
+    }
+    #contentDiv {
+      display: none;
+    }
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    h2 {
+      text-align: center;
+    }
+    video {
+      width: 100%;
+      margin-top: 15px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loginDiv">
+    <h2>ورود به shakor</h2>
+    <input type="password" id="passwordInput" placeholder="رمز را وارد کنید" />
+    <button onclick="checkPassword()">ورود</button>
+    <p id="errorMsg" style="color:red; display:none;">رمز اشتباه است</p>
+  </div>
+
+  <div id="contentDiv">
+    <h2>ویدئوهای فوتبالی</h2>
+    <video controls>
+      <source src="video1.mp4" type="video/mp4" />
+      مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.
+    </video>
+    <video controls>
+      <source src="video2.mp4" type="video/mp4" />
+      مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.
+    </video>
+    <!-- اینجا می‌تونی ویدئوهای بیشتر اضافه کنی -->
+  </div>
+
+<script>
+  function checkPassword() {
+    const pass = document.getElementById('passwordInput').value;
+    if (pass === 'shakorebedoneke') {
+      document.getElementById('loginDiv').style.display = 'none';
+      document.getElementById('contentDiv').style.display = 'block';
+      document.getElementById('errorMsg').style.display = 'none';
+    } else {
+      document.getElementById('errorMsg').style.display = 'block';
+    }
+  }
+</script>
+
+</body>
+</html>
